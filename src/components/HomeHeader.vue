@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<div class="header_inner">
-			<div class="header_count">主页</div>
+			<div class="header_cont">主页</div>
 		</div>
 	</header>
 </template>
@@ -22,5 +22,14 @@
 		margin: 0 auto;
 		padding:0 0.24rem;
 		border-bottom: 0.02rem solid #80ccd6
+	}
+	.header_cont {
+		text-align: center;
+		padding: 0 0.24rem;
+		line-height: 0.86rem;
+		font-size: 15px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 </style>
