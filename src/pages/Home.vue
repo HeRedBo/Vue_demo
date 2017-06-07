@@ -8,7 +8,9 @@
                 <list  
                     v-for="item in items"  
                     :price="item.price"  
-                    :title="item.title">  
+                    :title="item.title"
+                    :img="item.img"
+                    >  
                 </list>  
             </ul>  
         </div>  
@@ -40,22 +42,19 @@
     export default {  
         data () {  
             return {  
-                items: [  
-                    { price: "129.00", title: "大学" },  
-                    { price: "256.00", title: "中庸" },  
-                    { price: "399.00", title: "论语" },  
-                    { price: "998.00", title: "孟子" },  
-                    { price: "99.00", title: "道德经" },  
-                    { price: "89.00", title: "老子" },  
-                    { price: "188.00", title: "金刚经" },  
-                    { price: "209.00", title: "易筋经" },  
-                ]  
+                items: []  
             }  
         },  
         // 在components字段中，包含导入的子组件  
         components: {  
             HomeHeader,  
             List  
-        }  
+        },
+        // create 在组件创建完成是 执行钩子函数
+        created (){
+            this.$http.get('/api/books').then((data) => {
+                this.items = data.body.data;  
+            })
+        }
     }  
 </script>  

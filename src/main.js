@@ -5,6 +5,9 @@ import Vue from 'vue'
 import VueRooter from 'vue-router'
 Vue.use(VueRooter)
 
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
 // 导入pages 下的home.vue
 import Home from './pages/Home'
 import Detail from './pages/Detail'

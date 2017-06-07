@@ -3,7 +3,7 @@
     <li class="sec_li">  
         <router-link to="/detail" class="lp_li_a">  
             <div class="lp_li_imgWrap">  
-                <img src="../assets/images/timg.jpg" height="291" width="450" alt="">  
+                <img :src="img" alt="">  
             </div>  
             <p class="lp_li_name">{{ title }}</p>  
             <p class="lp_li_price">￥{{ price }}元</p>  
@@ -48,6 +48,6 @@
   
 <script>  
     export default {  
-        props: ['price', 'title']  
+        props: ['price', 'title','img']  
     }  
 </script>  
